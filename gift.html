@@ -1,0 +1,1423 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Open My Heart ❤️</title>
+
+<style>
+
+/* ================================
+   RESET
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    font-family: "Trebuchet MS", Arial, sans-serif;
+
+    color: #5b263c;
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(255,255,255,0.95),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(255,210,225,0.75),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #fff9fb 0%,
+            #ffeaf1 48%,
+            #ffd9e6 100%
+        );
+}
+
+
+/* ================================
+   MAIN
+================================ */
+
+.container {
+    width: min(1100px, 100%);
+    margin: auto;
+    padding: 65px 22px 35px;
+
+    text-align: center;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* ================================
+   INTRO
+================================ */
+
+.small-title {
+    margin-bottom: 14px;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    letter-spacing: 5px;
+    text-transform: uppercase;
+
+    color: #a34d6b;
+}
+
+h1 {
+    margin-bottom: 20px;
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(50px, 8vw, 90px);
+    line-height: 0.95;
+
+    font-weight: normal;
+
+    color: #8b294b;
+
+    text-shadow:
+        0 5px 20px rgba(139,41,76,0.12);
+}
+
+.subtitle {
+    width: min(650px, 100%);
+    margin: auto;
+
+    font-family: Georgia, serif;
+
+    font-size: 20px;
+    line-height: 1.7;
+
+    color: #704052;
+}
+
+.instruction {
+    margin-top: 17px;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    color: #a35d75;
+}
+
+
+/* ================================
+   ENVELOPE GRID
+================================ */
+
+.envelope-container {
+    width: min(980px, 100%);
+
+    margin: 55px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 27px;
+}
+
+
+/* ================================
+   ENVELOPE
+================================ */
+
+.envelope {
+    position: relative;
+
+    height: 205px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #fff6f9
+        );
+
+    border:
+        1px solid
+        rgba(160,70,100,0.15);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 35px
+        rgba(120,40,70,0.11);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.envelope:hover {
+    transform: translateY(-9px);
+
+    box-shadow:
+        0 25px 55px
+        rgba(120,40,70,0.2);
+}
+
+
+/* ================================
+   ENVELOPE FLAP
+================================ */
+
+.flap {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 105px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fac4d3,
+            #f2a9c0
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 100%
+        );
+
+    z-index: 2;
+}
+
+
+/* ================================
+   ENVELOPE FOLDS
+================================ */
+
+.envelope::before,
+.envelope::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+
+    width: 0;
+    height: 0;
+
+    z-index: 1;
+
+    border-style: solid;
+}
+
+.envelope::before {
+    left: 0;
+
+    border-width:
+        0
+        0
+        105px
+        50%;
+
+    border-color:
+        transparent
+        transparent
+        #f7d6e0
+        transparent;
+}
+
+.envelope::after {
+    right: 0;
+
+    border-width:
+        105px
+        0
+        0
+        50%;
+
+    border-color:
+        transparent
+        transparent
+        transparent
+        #f7d6e0;
+}
+
+
+/* ================================
+   HEART SEAL
+================================ */
+
+.seal {
+    position: absolute;
+
+    top: 63px;
+    left: 50%;
+
+    width: 55px;
+    height: 55px;
+
+    transform:
+        translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border:
+        3px solid
+        rgba(255,255,255,0.9);
+
+    background:
+        linear-gradient(
+            145deg,
+            #b63e66,
+            #8d274a
+        );
+
+    color: white;
+
+    font-size: 22px;
+
+    z-index: 5;
+
+    box-shadow:
+        0 8px 20px
+        rgba(100,20,50,0.25);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.envelope:hover .seal {
+    transform:
+        translateX(-50%)
+        scale(1.12);
+
+    box-shadow:
+        0 12px 28px
+        rgba(100,20,50,0.35);
+}
+
+
+/* ================================
+   ENVELOPE TEXT
+================================ */
+
+.envelope-content {
+    position: absolute;
+
+    left: 18px;
+    right: 18px;
+    bottom: 19px;
+
+    z-index: 6;
+}
+
+.number {
+    margin-bottom: 6px;
+
+    font-size: 9px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    color: #ae657d;
+}
+
+.envelope-content h3 {
+    font-family: Georgia, serif;
+
+    font-size: 21px;
+    line-height: 1.15;
+
+    font-weight: normal;
+
+    color: #7d2947;
+}
+
+
+/* ================================
+   FLOATING HEARTS
+================================ */
+
+.heart {
+    position: fixed;
+
+    bottom: -40px;
+
+    font-size: 20px;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    animation:
+        floatingHeart
+        9s linear infinite;
+}
+
+.heart:nth-child(1) {
+    left: 8%;
+    animation-delay: 0s;
+}
+
+.heart:nth-child(2) {
+    left: 27%;
+    animation-delay: 2s;
+}
+
+.heart:nth-child(3) {
+    left: 48%;
+    animation-delay: 4s;
+}
+
+.heart:nth-child(4) {
+    left: 68%;
+    animation-delay: 1s;
+}
+
+.heart:nth-child(5) {
+    left: 88%;
+    animation-delay: 3s;
+}
+
+@keyframes floatingHeart {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0)
+            scale(0.8);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.5;
+    }
+
+    50% {
+        transform:
+            translateY(-50vh)
+            rotate(20deg)
+            scale(1.1);
+
+        opacity: 0.65;
+    }
+
+    100% {
+        transform:
+            translateY(-115vh)
+            rotate(-20deg)
+            scale(1.4);
+
+        opacity: 0;
+    }
+}
+
+
+/* ================================
+   MODAL
+================================ */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(55,14,30,0.74);
+
+    backdrop-filter: blur(10px);
+
+    -webkit-backdrop-filter: blur(10px);
+
+    z-index: 100;
+}
+
+.modal.active {
+    display: flex;
+}
+
+
+/* ================================
+   LETTER
+================================ */
+
+.letter {
+    position: relative;
+
+    width: min(620px, 100%);
+
+    max-height: 88vh;
+
+    overflow-y: auto;
+
+    padding:
+        55px
+        50px
+        45px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffefb,
+            #fff9f4
+        );
+
+    border-radius: 24px;
+
+    border:
+        1px solid
+        #efd0da;
+
+    box-shadow:
+        0 35px 90px
+        rgba(0,0,0,0.32);
+
+    animation:
+        letterAppear
+        0.45s ease;
+}
+
+.letter::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 13px;
+
+    border:
+        1px solid
+        rgba(181,93,119,0.25);
+
+    border-radius: 17px;
+
+    pointer-events: none;
+}
+
+@keyframes letterAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(35px)
+            scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* ================================
+   CLOSE
+================================ */
+
+.close {
+    position: absolute;
+
+    top: 17px;
+    right: 18px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #f7d7e1;
+
+    color: #8d294b;
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.close:hover {
+    transform: rotate(90deg);
+
+    background: #a9365d;
+
+    color: white;
+}
+
+
+/* ================================
+   LETTER CONTENT
+================================ */
+
+.letter-number {
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color: #b25c78;
+}
+
+.letter h2 {
+    position: relative;
+
+    z-index: 2;
+
+    margin:
+        13px 0
+        24px;
+
+    font-family: Georgia, serif;
+
+    font-size: 38px;
+
+    line-height: 1.1;
+
+    font-weight: normal;
+
+    color: #8c294b;
+}
+
+.letter p {
+    position: relative;
+
+    z-index: 2;
+
+    font-family: Georgia, serif;
+
+    font-size: 20px;
+
+    line-height: 1.8;
+
+    color: #60404b;
+
+    white-space: pre-line;
+}
+
+
+/* ================================
+   SIGNATURE
+================================ */
+
+.signature {
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 30px;
+
+    text-align: right;
+
+    font-family: cursive;
+
+    font-size: 24px;
+
+    color: #a9365d;
+}
+
+
+/* ================================
+   SCROLLBAR
+================================ */
+
+.letter::-webkit-scrollbar {
+    width: 6px;
+}
+
+.letter::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.letter::-webkit-scrollbar-thumb {
+    background: #e4aaba;
+
+    border-radius: 10px;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    margin-top: 65px;
+
+    padding-bottom: 15px;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    color: #a36579;
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 850px) {
+
+    .envelope-container {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 22px;
+    }
+
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 560px) {
+
+    .container {
+        padding:
+            45px
+            16px
+            25px;
+    }
+
+    .small-title {
+        font-size: 9px;
+
+        letter-spacing: 3px;
+    }
+
+    h1 {
+        font-size: 54px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+
+        line-height: 1.55;
+    }
+
+    .envelope-container {
+        grid-template-columns: 1fr;
+
+        width: min(370px, 100%);
+
+        margin-top: 42px;
+
+        gap: 20px;
+    }
+
+    .envelope {
+        height: 195px;
+    }
+
+    .envelope-content h3 {
+        font-size: 22px;
+    }
+
+    .letter {
+        padding:
+            50px
+            27px
+            40px;
+    }
+
+    .letter h2 {
+        font-size: 32px;
+    }
+
+    .letter p {
+        font-size: 18px;
+
+        line-height: 1.7;
+    }
+
+}
+
+
+/* ================================
+   SMALL PHONE
+================================ */
+
+@media (max-width: 380px) {
+
+    h1 {
+        font-size: 48px;
+    }
+
+    .letter {
+        padding:
+            48px
+            22px
+            35px;
+    }
+
+    .letter h2 {
+        font-size: 29px;
+    }
+
+    .letter p {
+        font-size: 17px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- FLOATING HEARTS -->
+
+<div class="heart">❤️</div>
+<div class="heart">💗</div>
+<div class="heart">💕</div>
+<div class="heart">❤️</div>
+<div class="heart">💖</div>
+
+
+<!-- MAIN -->
+
+<div class="container">
+
+
+    <div class="small-title">
+        A Little Something From My Heart
+    </div>
+
+
+    <h1>
+        Open My Heart ❤️
+    </h1>
+
+
+    <p class="subtitle">
+
+        I couldn't put everything I feel
+        into just one letter...
+
+        So I made you seven.
+
+        Open them only when
+        the moment feels right. 💌
+
+    </p>
+
+
+    <p class="instruction">
+        ✨ Choose an envelope and discover what's inside ✨
+    </p>
+
+
+    <!-- ENVELOPES -->
+
+    <div class="envelope-container">
+
+
+        <!-- LETTER 1 -->
+
+        <div
+            class="envelope"
+            onclick="openLetter(0)"
+        >
+
+            <div class="flap"></div>
+
+            <div class="seal">
+                ❤️
+            </div>
+
+            <div class="envelope-content">
+
+                <div class="number">
+                    LETTER 01
+                </div>
+
+                <h3>
+                    Open when you miss me
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <!-- LETTER 2 -->
+
+        <div
+            class="envelope"
+            onclick="openLetter(1)"
+        >
+
+            <div class="flap"></div>
+
+            <div class="seal">
+                💗
+            </div>
+
+            <div class="envelope-content">
+
+                <div class="number">
+                    LETTER 02
+                </div>
+
+                <h3>
+                    Open when you're sad
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <!-- LETTER 3 -->
+
+        <div
+            class="envelope"
+            onclick="openLetter(2)"
+        >
+
+            <div class="flap"></div>
+
+            <div class="seal">
+                🥺
+            </div>
+
+            <div class="envelope-content">
+
+                <div class="number">
+                    LETTER 03
+                </div>
+
+                <h3>
+                    Open when you're angry with me
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <!-- LETTER 4 -->
+
+        <div
+            class="envelope"
+            onclick="openLetter(3)"
+        >
+
+            <div class="flap"></div>
+
+            <div class="seal">
+                ✨
+            </div>
+
+            <div class="envelope-content">
+
+                <div class="number">
+                    LETTER 04
+                </div>
+
+                <h3>
+                    Open when you need motivation
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <!-- LETTER 5 -->
+
+        <div
+            class="envelope"
+            onclick="openLetter(4)"
+        >
+
+            <div class="flap"></div>
+
+            <div class="seal">
+                💖
+            </div>
+
+            <div class="envelope-content">
+
+                <div class="number">
+                    LETTER 05
+                </div>
+
+                <h3>
+                    Why I love you
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <!-- LETTER 6 -->
+
+        <div
+            class="envelope"
+            onclick="openLetter(5)"
+        >
+
+            <div class="flap"></div>
+
+            <div class="seal">
+                🎂
+            </div>
+
+            <div class="envelope-content">
+
+                <div class="number">
+                    LETTER 06
+                </div>
+
+                <h3>
+                    Open on your birthday
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <!-- LETTER 7 -->
+
+        <div
+            class="envelope"
+            onclick="openLetter(6)"
+        >
+
+            <div class="flap"></div>
+
+            <div class="seal">
+                🫂
+            </div>
+
+            <div class="envelope-content">
+
+                <div class="number">
+                    LETTER 07
+                </div>
+
+                <h3>
+                    Open when you need a hug
+                </h3>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <footer>
+        Made with love, just for you ❤️
+    </footer>
+
+
+</div>
+
+
+<!-- LETTER POPUP -->
+
+<div
+    class="modal"
+    id="letterModal"
+>
+
+
+    <div class="letter">
+
+
+        <button
+            class="close"
+            onclick="closeLetter()"
+        >
+            ×
+        </button>
+
+
+        <div
+            class="letter-number"
+            id="letterNumber"
+        >
+            LETTER 01
+        </div>
+
+
+        <h2 id="letterTitle">
+            Open when you miss me ❤️
+        </h2>
+
+
+        <p id="letterText"></p>
+
+
+        <div class="signature">
+            Always yours, ❤️
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+/* =====================================
+   LETTER CONTENT
+===================================== */
+
+const letters = [
+
+    {
+        title:
+            "Open when you miss me ❤️",
+
+        text:
+`Hey love,
+
+If you're reading this, it probably means you're missing me.
+
+I wish I could magically appear beside you right now and give you the biggest hug.
+
+Until I can do that, just remember that somewhere in this world, there is someone thinking about you, smiling because of you, and missing you too.
+
+Close your eyes for a moment...
+
+Imagine me sitting beside you.
+
+I'm right there. ❤️`
+    },
+
+
+    {
+        title:
+            "Open when you're sad 💗",
+
+        text:
+`Hey you,
+
+I know today might not be your best day.
+
+But please remember that one bad day doesn't mean you have a bad life.
+
+You are stronger than you think.
+
+Take a deep breath.
+Drink some water.
+Rest if you need to.
+
+And remember...
+
+You don't have to face everything alone.
+
+I'm always here for you. ❤️`
+    },
+
+
+    {
+        title:
+            "Open when you're angry with me 🥺",
+
+        text:
+`Okay...
+
+First, breathe. 😂
+
+If I'm the reason you're angry, I'm sorry.
+
+I might not always say the perfect thing or do the perfect thing, but I never want to hurt you.
+
+Whenever you're ready, let's talk.
+
+No ego.
+No attitude.
+Just us.
+
+Because being right is never more important to me than being okay with you.
+
+Now...
+
+Can I have my hug back? 🥺❤️`
+    },
+
+
+    {
+        title:
+            "Open when you need motivation ✨",
+
+        text:
+`Listen to me carefully.
+
+You can do this.
+
+Whatever you're working towards right now, don't give up just because it's difficult.
+
+Remember how far you've already come.
+
+You don't need to be perfect.
+
+You just need to keep going.
+
+I believe in you.
+
+And whenever you forget how capable you are...
+
+Come back and read this again.
+
+You've got this. ❤️`
+    },
+
+
+    {
+        title:
+            "Why I love you 💖",
+
+        text:
+`I don't love you for just one reason.
+
+I love you for the little things.
+
+Your smile.
+Your voice.
+The way you make me laugh.
+The way you care.
+The way you make ordinary moments feel special.
+
+I love the memories we've created.
+
+I love the person I become when I'm with you.
+
+And most importantly...
+
+I love that out of all the people in this world,
+
+somehow...
+
+I found you. ❤️`
+    },
+
+
+    {
+        title:
+            "Open on your birthday 🎂",
+
+        text:
+`Happy Birthday, my favorite person. ❤️
+
+I hope this year brings you everything you've been wishing for.
+
+I hope you achieve your dreams.
+
+I hope you laugh more.
+
+I hope you worry less.
+
+And I hope I get to be there for many more birthdays.
+
+Today is your day.
+
+So smile.
+
+Enjoy it.
+
+And remember...
+
+Someone out here is incredibly lucky to have you in their life.
+
+Happy Birthday. 🎂❤️`
+    },
+
+
+    {
+        title:
+            "Open when you need a hug 🫂",
+
+        text:
+`Close your eyes.
+
+Imagine I'm standing right in front of you.
+
+Now imagine me giving you the longest, warmest hug.
+
+No words.
+
+Just a hug.
+
+Stay there for a few seconds.
+
+Breathe.
+
+Everything will be okay.
+
+And until I can actually give you that hug...
+
+Let this letter give you one instead. 🫂❤️`
+    }
+
+];
+
+
+/* =====================================
+   OPEN LETTER
+===================================== */
+
+function openLetter(index) {
+
+    document
+        .getElementById("letterNumber")
+        .textContent =
+        "LETTER " +
+        String(index + 1).padStart(2, "0");
+
+
+    document
+        .getElementById("letterTitle")
+        .textContent =
+        letters[index].title;
+
+
+    document
+        .getElementById("letterText")
+        .textContent =
+        letters[index].text;
+
+
+    document
+        .getElementById("letterModal")
+        .classList
+        .add("active");
+
+
+    document.body.style.overflow =
+        "hidden";
+}
+
+
+/* =====================================
+   CLOSE LETTER
+===================================== */
+
+function closeLetter() {
+
+    document
+        .getElementById("letterModal")
+        .classList
+        .remove("active");
+
+
+    document.body.style.overflow =
+        "auto";
+}
+
+
+/* =====================================
+   CLICK OUTSIDE LETTER
+===================================== */
+
+document
+    .getElementById("letterModal")
+    .addEventListener(
+        "click",
+        function(event) {
+
+            if (
+                event.target === this
+            ) {
+                closeLetter();
+            }
+
+        }
+    );
+
+
+/* =====================================
+   ESC KEY
+===================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Escape"
+        ) {
+            closeLetter();
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+</html>
+
